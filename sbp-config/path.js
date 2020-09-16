@@ -4,7 +4,7 @@ module.exports = {
     js: 'src/js/',
     css: 'src/css/',
     sprite: 'src/images/sprite',
-    spriteSvg: 'src/',
+    spriteSvg: 'src/images/sprite-svg',
     symbolsSvg: 'src/images/symbols-svg'
   },
   build: {
@@ -15,7 +15,7 @@ module.exports = {
     i: 'build/i/',
     fonts: 'build/fonts/',
     sprite: 'build/images/sprite',
-    spriteSvg: 'build/',
+    spriteSvg: 'build/images/sprite-svg',
     symbolsSvg: './build/images/symbols-svg'
   },
   src: {
@@ -27,7 +27,7 @@ module.exports = {
     fonts: 'src/fonts/**/*.*',
     sprites: 'src/sprites-png/*.png',
     spritesSvg: 'src/sprites-svg/*.svg',
-    symbolsSvg: 'src/symbol-svg/*.svg',
+    symbolsSvg: 'src/symbol-svg/*.svg'
   },
   watch: {
     html: 'src/html/**/*.html',
@@ -36,10 +36,10 @@ module.exports = {
     css: 'src/scss/**/*.scss',
     sprites: 'src/sprites-png/*.png',
     spritesSvg: 'src/sprites-svg/*.svg',
-    symbolsSvg: 'src/symbol-svg/*.svg',
+    symbolsSvg: 'src/symbol-svg/*.svg'
   },
   cleanFolder: './build',
   cleanHtml: './src/*.html',
   cleanJs: './src/js/script.js',
-  cleanCss: './src/css',
+  cleanCss: './src/css'
 };

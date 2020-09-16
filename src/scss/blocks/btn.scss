@@ -4,4 +4,29 @@
   cursor: pointer;
   padding: 0;
   margin: 0;
+
+  &_email {
+    @extend .email;
+  }
+
+  &_menu {
+    @extend .hamburger;
+  }
+
+  &_search {
+    @extend .search;
+  }
+
+  &_email,
+  &_menu,
+  &_search {
+    @extend .icon;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @media screen and (max-width: 979px) {
+      width: 100%;
+    }
+  }
+
 }
