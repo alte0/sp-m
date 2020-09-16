@@ -1,0 +1,9 @@
+.slider-main {
+  &__item {
+    display: none;
+  }
+
+  &__item:first-child {
+    display: block;
+  }
+}

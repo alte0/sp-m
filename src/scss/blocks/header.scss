@@ -1,0 +1,26 @@
+.header {
+  background-image: url("/images/bg-header.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  padding-top: 24px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &__link-logo {
+    align-self: center;
+    width: 92px;
+  }
+
+  &__nav {
+    @media screen and (max-width: 979px) {
+      display: none;
+    }
+  }
+
+}
+
+
