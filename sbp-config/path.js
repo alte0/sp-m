@@ -5,7 +5,8 @@ module.exports = {
     css: 'src/css/',
     sprite: 'src/images/sprite',
     spriteSvg: 'src/images/sprite-svg',
-    symbolsSvg: 'src/images/symbols-svg'
+    symbolsSvg: 'src/images/symbols-svg',
+    inlineSvg: 'src/images'
   },
   build: {
     html: 'build/',
@@ -16,7 +17,8 @@ module.exports = {
     fonts: 'build/fonts/',
     sprite: 'build/images/sprite',
     spriteSvg: 'build/images/sprite-svg',
-    symbolsSvg: './build/images/symbols-svg'
+    symbolsSvg: './build/images/symbols-svg',
+    inlineSvg: 'build/images'
   },
   src: {
     html: 'src/html/*.html',
@@ -27,7 +29,8 @@ module.exports = {
     fonts: 'src/fonts/**/*.*',
     sprites: 'src/sprites-png/*.png',
     spritesSvg: 'src/sprites-svg/*.svg',
-    symbolsSvg: 'src/symbol-svg/*.svg'
+    symbolsSvg: 'src/symbol-svg/*.svg',
+    inlineSvg: 'src/inline-svg/*.svg'
   },
   watch: {
     html: 'src/html/**/*.html',
@@ -36,7 +39,8 @@ module.exports = {
     css: 'src/scss/**/*.scss',
     sprites: 'src/sprites-png/*.png',
     spritesSvg: 'src/sprites-svg/*.svg',
-    symbolsSvg: 'src/symbol-svg/*.svg'
+    symbolsSvg: 'src/symbol-svg/*.svg',
+    inlineSvg: 'src/inline-svg/*.svg'
   },
   cleanFolder: './build',
   cleanHtml: './src/*.html',

@@ -1,9 +1,20 @@
 .slider-main {
   &__item {
     display: none;
+    text-align: center;
   }
 
   &__item:first-child {
     display: block;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 36.4892px;
+    line-height: 40px;
+  }
+
+  &__desc {
+
   }
 }

@@ -15,28 +15,28 @@ import flags from '../flags';
 import * as pathConf from '../path';
 import valid from 'gulp-html-validate';
 
-export function htmlTask() {
+export function htmlTask () {
   let path = './src/html/blocks/';
 
   const configBem = {
     elemPrefix: '__',
     modPrefix: '_',
-    modDlmtr: '-',
+    modDlmtr: '-'
   };
   const configInclude = {
     root: `${path}`,
     // root: `./src/html/blocks/`,
-    encoding: 'utf8',
+    encoding: 'utf8'
   };
   const configExtend = {
     encoding: 'utf8', // Parent template encoding (default: 'utf8')
-    root: './src/html/layout/', // Path to parent template directory (default: './')
+    root: './src/html/layout/' // Path to parent template directory (default: './')
   };
   const configBeautify = {
     rules: {
       indent: 2,
-      blankLines: false,
-    },
+      blankLines: false
+    }
   };
 
   const plugins = [
@@ -53,7 +53,7 @@ export function htmlTask() {
     .pipe(tap((file) => (path = file.path)))
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: './src/data-json/',
+      basepath: './src/data-json/'
     }))
     .pipe(posthtml(plugins, options))
     .pipe(gulpif(flags.watch, dest(pathConf.dev.html)))

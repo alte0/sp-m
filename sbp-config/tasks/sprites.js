@@ -13,6 +13,8 @@ import { svgConfigPlugs } from '../svgConfigPlugs';
 import merge from 'merge-stream';
 import browserSync from 'browser-sync';
 import gulpif from 'gulp-if';
+import svgstore from 'gulp-svgstore';
+import rename from 'gulp-rename';
 import flags from '../flags';
 
 export function spritesTask () {
@@ -51,6 +53,7 @@ export function spritesSVGTask () {
   return src(path.src.spritesSvg)
     .pipe(plumber())
     // .pipe(svgmin(svgConfigPlugs))
+    .pipe(svgmin())
     .pipe(
       svgSprites({
         mode: 'sprite',
@@ -80,7 +83,8 @@ export function spritesSVGTask () {
 export function symbolsSVGTask () {
   return src(path.src.symbolsSvg)
     .pipe(plumber())
-    .pipe(svgmin(svgConfigPlugs))
+    // .pipe(svgmin(svgConfigPlugs))
+    .pipe(svgmin())
     .pipe(
       svgSymbols({
         svgAttrs: { class: 'svg-symbol' },
@@ -90,5 +94,20 @@ export function symbolsSVGTask () {
     )
     .pipe(gulpif(flags.watch, dest(path.dev.symbolsSvg)))
     .pipe(gulpif(!flags.watch, dest(path.build.symbolsSvg)))
+    .pipe(gulpif(flags.bs, browserSync.stream()));
+}
+
+export function inlineSpriteSVGTask () {
+  return src(path.src.inlineSvg)
+    .pipe(plumber())
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    .pipe(gulpif(flags.watch, dest(path.dev.inlineSvg)))
+    .pipe(gulpif(!flags.watch, dest(path.build.inlineSvg)))
     .pipe(gulpif(flags.bs, browserSync.stream()));
 }

@@ -9,7 +9,7 @@ import { fontsTask } from './sbp-config/tasks/fonts';
 import { imagesTask, iTask } from './sbp-config/tasks/images';
 import { jsTask } from './sbp-config/tasks/js';
 import { sassTask } from './sbp-config/tasks/sass';
-import { spritesTask, spritesSVGTask, symbolsSVGTask } from './sbp-config/tasks/sprites';
+import { spritesTask, spritesSVGTask, symbolsSVGTask, inlineSpriteSVGTask } from './sbp-config/tasks/sprites';
 import { zipArchive } from './sbp-config/tasks/zipArchive';
 import { bsTask } from './sbp-config/tasks/server';
 import { deployTask } from './sbp-config/tasks/deploy';
@@ -36,7 +36,8 @@ function watchTask(cb) {
 // ===========================================
 const defaultTask = () => series(
   cleanDevTask,
-  parallel(spritesTask, spritesSVGTask, symbolsSVGTask, jsTask, sassTask),
+  // parallel(spritesTask, spritesSVGTask, symbolsSVGTask, jsTask, sassTask),
+  parallel(spritesTask, inlineSpriteSVGTask, jsTask, sassTask),
   htmlTask
 );
 
@@ -49,3 +50,4 @@ exports.html = series(minifyTask, noBsTask, noWatchTask, htmlTask);
 exports.build = series(cleanTask, copyTask(), setBuild());
 exports.zip = series(cleanTask, copyTask(), setBuild(), zipArchive);
 exports.deploy = series(cleanTask, copyTask(), setBuild(), deployTask);
+exports.test = series(cleanTask, inlineSpriteSVGTask);

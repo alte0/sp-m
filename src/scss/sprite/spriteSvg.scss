@@ -8,39 +8,12 @@
     display: inline-block;
     background-image: url("../images/sprite-svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 4.4em 13.2em;
+    background-size: 0em 0em;
 }
 
 .no-svg .icon:before {
     background-image: url("../sprite.png");
 }
-
-
-
-  .icon.email:before {
-      background-position: -1em -1em;
-      width: 2.4em;
-      height: 2.4em;
-  }
-
-
-
-
-  .icon.hamburger:before {
-      background-position: -1em -5.4em;
-      width: 2.4em;
-      height: 2.4em;
-  }
-
-
-
-
-  .icon.search:before {
-      background-position: -1em -9.8em;
-      width: 2.4em;
-      height: 2.4em;
-  }
-
 
 
 

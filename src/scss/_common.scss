@@ -21,6 +21,10 @@ img {
   overflow: hidden;
 }
 
+.svg-inline, [hidden], template {
+  display: none;
+}
+
 .container {
   max-width: 1120px;
   margin-left: auto;
