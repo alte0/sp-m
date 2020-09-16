@@ -6,7 +6,7 @@ module.exports = {
     sprite: 'src/images/sprite',
     spriteSvg: 'src/images/sprite-svg',
     symbolsSvg: 'src/images/symbols-svg',
-    inlineSvg: 'src/images'
+    inlineSvg: 'src/images/sprite'
   },
   build: {
     html: 'build/',
@@ -18,7 +18,7 @@ module.exports = {
     sprite: 'build/images/sprite',
     spriteSvg: 'build/images/sprite-svg',
     symbolsSvg: './build/images/symbols-svg',
-    inlineSvg: 'build/images'
+    inlineSvg: 'build/images/sprite'
   },
   src: {
     html: 'src/html/*.html',

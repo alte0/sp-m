@@ -34,43 +34,51 @@
     color: $white;
     padding: 16px 28px;
     position: relative;
-    background-image: linear-gradient(to bottom, $accent40, $accent40 50%, $accent50 50%, $accent50);
-    background-position: 0 100%;
-    background-size: 100% 200%;
-    transition: background .3s ease-in;
+    overflow: hidden;
+    z-index: 0;
 
-    &:hover {
-      background-position: 0 0;
-      transition: background .3s ease-in;
+    &:before {
+      content: '';
+      background-image: linear-gradient(to bottom, $accent40, $accent40 50%, $accent50 50%, $accent50);
+      position: absolute;
+      top: -100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -2;
     }
 
-    &:focus {
-      outline: none;
+    &:after {
+      content: '';
+      background-color: $accent50;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+      z-index: -1;
+    }
 
+    &:hover {
       &:before {
-        content: '';
-        position: absolute;
-        top: -3px;
-        bottom: -3px;
-        left: -3px;
-        right: -3px;
-        border: 1px solid $accent20;
+        transition: transform .3s linear;
+        transform: translateY(50%);
       }
     }
 
-    &:active {
-      //background-color: $accent40;
+    &:focus {
+      box-shadow: 0 0 0 2px white, 0 0 0 3px $accent20;
+      outline: none;
+    }
 
-      //&:before,
-      //&:after {
-      //  content: '';
-      //  position: absolute;
-      //  top: 0;
-      //  bottom: 0;
-      //  width: 56px;
-      //}
-      //&:before {}
-      //&:after {}
+    &:active {
+      &:after {
+        animation-name: active;
+        animation-duration: .1s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
     }
 
     &:disabled {
@@ -78,4 +86,15 @@
     }
   }
 
+}
+
+@keyframes active {
+  0% {
+    left: 50%;
+    right: 50%;
+  }
+  100% {
+    left: 0%;
+    right: 0%;
+  }
 }

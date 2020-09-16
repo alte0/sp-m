@@ -23,6 +23,7 @@ function watchTask(cb) {
     watch([path.watch.sprites], series(spritesTask));
     watch([path.watch.spritesSvg], series(spritesSVGTask));
     watch([path.watch.symbolsSvg], series(symbolsSVGTask));
+    watch([path.watch.inlineSvg], series(inlineSpriteSVGTask));
     watch([path.watch.css], series(sassTask));
     watch(path.watch.js, series(jsTask));
   } else {
@@ -50,4 +51,4 @@ exports.html = series(minifyTask, noBsTask, noWatchTask, htmlTask);
 exports.build = series(cleanTask, copyTask(), setBuild());
 exports.zip = series(cleanTask, copyTask(), setBuild(), zipArchive);
 exports.deploy = series(cleanTask, copyTask(), setBuild(), deployTask);
-exports.test = series(cleanTask, inlineSpriteSVGTask);
+// exports.test = series(cleanTask, inlineSpriteSVGTask);
