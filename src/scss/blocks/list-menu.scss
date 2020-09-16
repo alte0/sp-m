@@ -1,7 +1,5 @@
 .list-menu {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @include clean-ul;
 
   &__item {
     text-align: center;

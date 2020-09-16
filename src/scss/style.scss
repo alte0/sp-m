@@ -18,6 +18,7 @@ $minify: false !default;
 @import "common";
 @import "sprite/sprite.scss";
 @import "sprite/spriteSvg.scss";
+@import "mixin";
 @import "blocks/**/*";
 // @import "../../node_modules/slick-carousel/slick/slick.scss";
 

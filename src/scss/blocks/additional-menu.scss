@@ -1,7 +1,5 @@
 .additional-menu {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @include clean-ul;
   display: flex;
   justify-content: space-around;
 
