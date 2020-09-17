@@ -22,6 +22,8 @@
   }
 
   &__item:nth-child(2) {
-    padding-left: 34px;
+    @media screen and (min-width: 980px) {
+      padding-left: 34px;
+    }
   }
 }
