@@ -1,5 +1,6 @@
 .header {
   padding-top: 24px;
+  position: relative;
 
   @media screen and (max-width: 979px) {
     background-image: url("/images/bg-header.svg");
@@ -64,9 +65,10 @@
   }
 
   &__form-search_open-js {
+    display: block;
+
     @media screen and (max-width: 979px) {
       background-color: transparentize($gray80, 0.4);
-      display: block;
       padding: 24px 20px;
       position: fixed;
       top: 0;
@@ -75,6 +77,15 @@
       right: 0;
       z-index: 10;
       overflow-y: auto;
+    }
+
+    @media screen and (min-width: 980px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 527px;
     }
   }
 
@@ -96,6 +107,12 @@
     top: 0;
     bottom: 0;
     margin: auto;
+
+    @media screen and (min-width: 980px) {
+      & .svg {
+        display: none;
+      }
+    }
   }
 
   &__form-text-submit {

@@ -26,4 +26,17 @@
       padding-left: 34px;
     }
   }
+
+  &__item:last-child {
+    @media screen and (min-width: 980px) {
+      order: -1;
+    }
+  }
+
+  &__item:first-child {
+    @media screen and (min-width: 980px) {
+      order: 1;
+    }
+  }
 }
+

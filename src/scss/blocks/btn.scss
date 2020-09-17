@@ -85,6 +85,10 @@
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
+    
+    &:disabled {
+      cursor: no-drop;
+    }
   }
 
   &_accent {

@@ -90,11 +90,6 @@
   &__input {
     font-size: inherit;
     line-height: inherit;
-
-    &:focus {
-      box-shadow: 0 0 0 2px white, 0 0 0 3px $accent20;
-      outline: none;
-    }
   }
 
   &__input,
@@ -102,6 +97,18 @@
     background-color: $gray3;
     border: none;
     padding: 14px 24px;
+
+    &:focus {
+      background-color: $gray1;
+      box-shadow: 0 0 0 2px white, 0 0 0 3px $accent20;
+      outline: none;
+    }
+
+    &:invalid {
+      background-color: $accent5;
+      border: 1px solid $accent30;
+      box-shadow: none;
+    }
   }
 
   &__textarea {
@@ -111,7 +118,7 @@
 
   &__wrap-textarea {
     max-height: 120px;
-    overflow-y: auto;
+    position: relative;
   }
 
   &__checkbox-agree {
