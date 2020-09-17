@@ -1,30 +1,55 @@
-<header block="header">
+<header block="header" mods="full-desktop-up">
   <div elem="container" class="container">
     <a elem="link-logo">
       <img src="images/logo.svg" width="92" height="64" alt="Лого Спектр-М" mix="block:header elem:logo block:logo">
     </a>
     <!-- end logo -->
+<!--    <nav elem="nav" mods="open-js">-->
     <nav elem="nav">
       <ul block="list-menu">
         <li elem="item">
-          <a href="#" elem="link">Главная</a>
+          <a href="#" elem="link" mods="active main">Главная</a>
         </li>
         <li elem="item">
-          <a href="#" elem="link">Продукция</a>
+          <a href="#" elem="link" mods="triangle-submenu">
+            Продукция
+            <svg class="svg svg_triangle-down" width="24" height="24">
+              <use xlink:href="#triangle-down"></use>
+            </svg>
+          </a>
         </li>
         <li elem="item">
-          <a href="#" elem="link">Области применения</a>
+          <a href="#" elem="link" mods="triangle-submenu">
+            Области применения
+            <svg class="svg svg_triangle-down" width="24" height="24">
+              <use xlink:href="#triangle-down"></use>
+            </svg>
+          </a>
         </li>
         <li elem="item">
           <a href="#" elem="link">Новости</a>
         </li>
         <li elem="item">
-          <a href="#" elem="link">Команда</a>
+          <a href="#" elem="link" mods="triangle-submenu about-company">
+            О компании
+            <svg class="svg svg_triangle-down" width="24" height="24">
+              <use xlink:href="#triangle-down"></use>
+            </svg>
+          </a>
         </li>
         <li elem="item">
-          <a href="#" elem="link">Контакты</a>
+          <a href="#" elem="link" mods="team">Команда</a>
+        </li>
+        <li elem="item">
+          <a href="#" elem="link" mods="contacts">Контакты</a>
         </li>
       </ul>
+      <button type="button" block="btn" mods="close-modal">
+        <span class="visually-hidden">Закрыть меню</span>
+        <svg class="svg svg_close-modal" width="24" height="24">
+          <use xlink:href="#close-modal"></use>
+        </svg>
+      </button>
     </nav>
     <!-- end nav -->
     <ul block="additional-menu">
@@ -55,6 +80,27 @@
     </ul>
     <!-- end additional-menu -->
   </div>
+  <form action="#" elem="form-search" mods="open-js">
+<!--  <form action="#" elem="form-search">-->
+    <div elem="form-row">
+      <input type="text" elem="form-input-search">
+      <button type="submit" elem="form-submit" class="btn">
+        <span elem="form-text-submit">Искать</span>
+        <svg class="svg svg_search-submit" width="24" height="24">
+          <use xlink:href="#search-submit"></use>
+        </svg>
+      </button>
+    </div>
+    <div elem="form-wrap">
+      <button type="button" block="btn" mods="close-modal">
+        <span class="visually-hidden">Закрыть меню</span>
+        <svg class="svg svg_close-modal" width="24" height="24">
+          <use xlink:href="#close-modal"></use>
+        </svg>
+      </button>
+    </div>
+  </form>
+  <!-- end form search -->
   <section elem="additional-content">
     <div block="slider-main">
       <div elem="item">

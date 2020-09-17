@@ -2,6 +2,8 @@
   &__item {
     display: none;
     text-align: center;
+    padding-top: 48px;
+    padding-bottom: 98px;
   }
 
   &__item:first-child {
@@ -12,9 +14,12 @@
     font-weight: bold;
     font-size: 36.4892px;
     line-height: 40px;
+    margin-top: 0;
+    margin-bottom: 24px;
   }
 
   &__desc {
-
+    margin-top: 0;
+    margin-bottom: 24px;
   }
 }

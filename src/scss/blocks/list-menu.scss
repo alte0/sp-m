@@ -1,7 +1,82 @@
 .list-menu {
   @include clean-ul;
 
+  @media screen and (max-width: 979px) {
+    padding-bottom: 67px;
+  }
+
   &__item {
     text-align: center;
+
+    @media screen and (max-width: 979px) {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width:980px) {
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 979px) {
+      display: block;
+      color: $white;
+      padding: 16px 10px;
+    }
+
+    @media screen and (min-width: 640px) and (max-width: 979px) {
+      padding: 20px 10px;
+    }
+
+    @media screen and (min-width: 640px) {
+      color: $black;
+    }
+  }
+
+  &__link_active {
+    @media screen and (max-width: 979px) {
+      background-color: $accent50;
+    }
+  }
+
+  &__link_triangle-submenu {
+    @media screen and (min-width:980px) {
+      padding-right: 20px;
+      position: relative;
+    }
+  }
+
+  &__link_triangle-submenu .svg_triangle-down {
+    position: absolute;
+    right: 0;
+    top: -4px;
+
+    @media screen and (max-width: 979px) {
+      display: none;
+    }
+  }
+
+  &__link_main,
+  &__link_team,
+  &__link_contacts {
+    @media screen and (min-width:980px) {
+      display: none;
+    }
+  }
+
+  &__link_about-company {
+    @media screen and (max-width: 979px) {
+      display: none;
+    }
   }
 }
