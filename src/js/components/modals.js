@@ -19,6 +19,7 @@ export const handleClickEmail = (evt) => {
         close.removeEventListener('click', handleClickClose);
         closeText.removeEventListener('click', handleClickClose);
         window.removeEventListener('keydown', handleClickClose);
+        document.body.classList.remove('overflow-hidden');
       };
 
       if (type === 'keydown' && code === 'Escape') {
@@ -29,6 +30,7 @@ export const handleClickEmail = (evt) => {
     };
 
     writeUs.classList.add('write-us-wrap_open-js');
+    document.body.classList.add('overflow-hidden');
     input.focus();
 
     if (close && closeText) {
@@ -49,10 +51,12 @@ export const handleClickMenu = () => {
 
     const handleClickCloseNav = () => {
       nav.classList.remove('header__nav_open-js');
+      document.body.classList.remove('overflow-hidden');
       close.removeEventListener('click', handleClickCloseNav);
     };
 
     nav.classList.add('header__nav_open-js');
+    document.body.classList.add('overflow-hidden');
 
     if (close) {
       close.addEventListener('click', handleClickCloseNav);
@@ -72,10 +76,12 @@ export const handleClickSearchMobile = () => {
 
     const handleClickCloseNav = () => {
       formSearch.classList.remove('header__form-search_open-js');
+      document.body.classList.remove('overflow-hidden');
       close.removeEventListener('click', handleClickCloseNav);
     };
 
     formSearch.classList.add('header__form-search_open-js');
+    document.body.classList.add('overflow-hidden');
     inputSearch.focus();
 
     if (close) {

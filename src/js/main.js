@@ -13,6 +13,7 @@ const email = document.querySelector('.btn_email');
 const hamburger = document.querySelector('.btn_menu');
 const search = document.querySelector('.btn_search');
 const formWriteUs = document.querySelector('.write-us');
+const headerNav = document.querySelector('.header__nav');
 
 const domLoaded = function () {
   const widthDesktop = 980;
@@ -27,10 +28,26 @@ const domLoaded = function () {
   };
   let widthWindows = window.innerWidth;
   let isDesktop = widthWindows >= widthDesktop;
+  let scrollBarNav = null;
+
+  /**
+   * Инициализация скроллбара на мобилке в навигации.
+   * @param isDesktop
+   * @param scrollBarNav
+   */
+  const initOverlayScrollbarMobile = (isDesktop, scrollBarNav) => {
+
+    scrollBarNav = OverlayScrollbars(headerNav, configScrollBars);
+
+    if (isDesktop) {
+      scrollBarNav.destroy();
+    }
+  };
 
   svg4everybody();
   OverlayScrollbars(document.querySelectorAll('[data-overlayscrollbars]'), configScrollBars);
   slider();
+  initOverlayScrollbarMobile(isDesktop, scrollBarNav);
 
   if (email) {
     const textarea = formWriteUs.querySelector('.write-us__textarea');
@@ -69,6 +86,7 @@ const domLoaded = function () {
     widthWindows = window.innerWidth;
 
     isDesktop = widthWindows >= widthDesktop;
+    initOverlayScrollbarMobile(isDesktop, scrollBarNav);
     console.log('windowsWidth - ', widthWindows);
     console.log('isDesktop - ', isDesktop);
   };
