@@ -5,8 +5,9 @@ import {
   handleClickSearchMobile,
   handleClickSearchDesktop
 } from './components/modals';
+import {toggleClass} from './helpers';
 import { slider } from './components/slider';
-import 'simplebar';
+import 'overlayscrollbars/js/OverlayScrollbars';
 
 const email = document.querySelector('.btn_email');
 const hamburger = document.querySelector('.btn_menu');
@@ -15,13 +16,33 @@ const formWriteUs = document.querySelector('.write-us');
 
 const domLoaded = function () {
   const widthDesktop = 980;
+  const configScrollBars = {
+    scrollbars: {
+      visibility: 'visible',
+      clickScrolling: true
+    },
+    textarea: {
+      inheritedAttrs: null
+    }
+  };
   let widthWindows = window.innerWidth;
   let isDesktop = widthWindows >= widthDesktop;
 
   svg4everybody();
+  OverlayScrollbars(document.querySelectorAll('[data-overlayscrollbars]'), configScrollBars);
   slider();
 
   if (email) {
+    const textarea = formWriteUs.querySelector('.write-us__textarea');
+    const hostTextarea = formWriteUs.querySelector('.os-host-textarea');
+
+    textarea.addEventListener('focus', () => {
+      toggleClass(hostTextarea, 'scrollbar-focus-js');
+    });
+    textarea.addEventListener('blur', () => {
+      toggleClass(hostTextarea, 'scrollbar-focus-js');
+    });
+
     email.addEventListener('click', handleClickEmail);
     formWriteUs.addEventListener('submit', (evt) => {
       evt.preventDefault();

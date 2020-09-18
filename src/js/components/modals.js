@@ -2,7 +2,7 @@
  * Клик по кнопке почты.
  */
 export const handleClickEmail = (evt) => {
-  const writeUs = document.querySelector('.write-us');
+  const writeUs = document.querySelector('.write-us-wrap');
   const input = writeUs.querySelector('input');
 
   if (writeUs) {
@@ -15,7 +15,7 @@ export const handleClickEmail = (evt) => {
        * закрываем форму и удаляем события
        */
       const closeForm = () => {
-        writeUs.classList.remove('write-us_open-js');
+        writeUs.classList.remove('write-us-wrap_open-js');
         close.removeEventListener('click', handleClickClose);
         closeText.removeEventListener('click', handleClickClose);
         window.removeEventListener('keydown', handleClickClose);
@@ -28,7 +28,7 @@ export const handleClickEmail = (evt) => {
       }
     };
 
-    writeUs.classList.add('write-us_open-js');
+    writeUs.classList.add('write-us-wrap_open-js');
     input.focus();
 
     if (close && closeText) {
@@ -90,24 +90,14 @@ export const handleClickSearchDesktop = () => {
   const inputSearch = formSearch.querySelector('.header__form-input-search');
 
   if (formSearch) {
-    // const close = formSearch.querySelector('.btn_close-modal');
     const nav = document.querySelector('.header__nav');
     const svgSearch = document.querySelector('.svg_search');
     const svgX = document.querySelector('.svg_x');
-
-    // const handleClickCloseNav = () => {
-    //   formSearch.classList.remove('header__form-search_open-js');
-    //   close.removeEventListener('click', handleClickCloseNav);
-    // };
 
     nav.classList.toggle('header__nav_hidden-js');
     formSearch.classList.toggle('header__form-search_open-js');
     svgSearch.classList.toggle('svg_hidden');
     svgX.classList.toggle('svg_hidden');
     inputSearch.focus();
-
-    // if (close) {
-    //   close.addEventListener('click', handleClickCloseNav);
-    // }
   }
 };

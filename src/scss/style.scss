@@ -13,7 +13,7 @@ $minify: false !default;
 }
 
 @import "../../node_modules/normalize.css/normalize";
-@import "../../node_modules/simplebar/dist/simplebar";
+@import "../../node_modules/overlayscrollbars/css/overlayScrollbars";
 @import "variables";
 @import "fonts";
 @import "common";
