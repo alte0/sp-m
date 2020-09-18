@@ -68,8 +68,8 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 50%;
-      right: 50%;
+      left: 51%;
+      right: 51%;
       z-index: -1;
     }
 
@@ -85,7 +85,7 @@
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
-    
+
     &:disabled {
       cursor: no-drop;
     }
@@ -156,11 +156,13 @@
   &_x {
     width: 56px;
     height: 56px;
-    stroke: $gray20;
 
     &:hover {
       background-color: $gray3;
-      stroke: $gray50;
+
+      & .svg_x {
+        stroke: $gray50;
+      }
     }
 
     &:active {
@@ -170,17 +172,10 @@
     &:disabled {
       background-color: $gray10;
     }
+
+    & .svg_x {
+      stroke: $gray20;
+    }
   }
 
-}
-
-@keyframes active {
-  0% {
-    left: 50%;
-    right: 50%;
-  }
-  100% {
-    left: 0;
-    right: 0;
-  }
 }

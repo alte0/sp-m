@@ -62,7 +62,8 @@ export const handleClickMenu = () => {
 /**
  * Клик по кнопке поиска.
  */
-export const handleClickSearch = () => {
+export const handleClickSearchMobile = () => {
+  console.log('handleClickSearchMobile');
   const formSearch = document.querySelector('.header__form-search');
   const inputSearch = formSearch.querySelector('.header__form-input-search');
 
@@ -80,5 +81,33 @@ export const handleClickSearch = () => {
     if (close) {
       close.addEventListener('click', handleClickCloseNav);
     }
+  }
+};
+
+export const handleClickSearchDesktop = () => {
+  console.log('handleClickSearchDesktop');
+  const formSearch = document.querySelector('.header__form-search');
+  const inputSearch = formSearch.querySelector('.header__form-input-search');
+
+  if (formSearch) {
+    // const close = formSearch.querySelector('.btn_close-modal');
+    const nav = document.querySelector('.header__nav');
+    const svgSearch = document.querySelector('.svg_search');
+    const svgX = document.querySelector('.svg_x');
+
+    // const handleClickCloseNav = () => {
+    //   formSearch.classList.remove('header__form-search_open-js');
+    //   close.removeEventListener('click', handleClickCloseNav);
+    // };
+
+    nav.classList.toggle('header__nav_hidden-js');
+    formSearch.classList.toggle('header__form-search_open-js');
+    svgSearch.classList.toggle('svg_hidden');
+    svgX.classList.toggle('svg_hidden');
+    inputSearch.focus();
+
+    // if (close) {
+    //   close.addEventListener('click', handleClickCloseNav);
+    // }
   }
 };

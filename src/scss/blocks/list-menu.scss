@@ -14,9 +14,27 @@
 
     @media screen and (min-width:980px) {
       margin-right: 24px;
+      position: relative;
 
       &:last-child {
         margin-right: 0;
+      }
+
+      &:hover:before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 20px;
+      }
+
+      &:hover .list-menu_submenu {
+        display: flex;
+      }
+
+      &:hover .list-menu__wrap-submenu {
+        display: block;
       }
     }
   }
@@ -38,8 +56,10 @@
       padding: 20px 10px;
     }
 
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 980px) {
       color: $black;
+      font-size: 12.5px;
+      line-height: 20px;
     }
   }
 
@@ -77,6 +97,51 @@
   &__link_about-company {
     @media screen and (max-width: 979px) {
       display: none;
+    }
+  }
+
+  &__wrap-submenu {
+    background-color: $white;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    max-height: 440px;
+    width: 240px;
+    overflow-y: auto;
+    z-index: 5;
+  }
+
+  &_submenu {
+    display: flex;
+    flex-direction: column;
+
+    & .list-menu__item {
+      margin-right: 0;
+      text-align: left;
+      padding: 6px 16px;
+
+      &:hover:not(.list-menu__item_active) {
+        background-color: $gray5;
+      }
+
+      &_active {
+        background-color: $gray80;
+        color: $white;
+      }
+
+      &:hover:before {
+        content: none;
+      }
+    }
+
+    & .list-menu__link {
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 24px;
+      text-transform: none;
+      color: inherit;
     }
   }
 }

@@ -19,5 +19,6 @@ src/images/sprite
 src/images/sprite-svg
 src/images/symbols-svg
 src/js/script.js
+src/js/vendor.bundle.js
 src/css/
 .publish
