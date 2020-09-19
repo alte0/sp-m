@@ -18,7 +18,8 @@ module.exports = {
     sprite: 'build/images/sprite',
     spriteSvg: 'build/images/sprite-svg',
     symbolsSvg: './build/images/symbols-svg',
-    inlineSvg: 'build/images/sprite'
+    inlineSvg: 'build/images/sprite',
+    favicon: 'build/'
   },
   src: {
     html: 'src/html/*.html',
@@ -30,7 +31,16 @@ module.exports = {
     sprites: 'src/sprites-png/*.png',
     spritesSvg: 'src/sprites-svg/*.svg',
     symbolsSvg: 'src/symbol-svg/*.svg',
-    inlineSvg: 'src/inline-svg/*.svg'
+    inlineSvg: 'src/inline-svg/*.svg',
+    favicon: [
+      'src/android-chrome-192x192.png',
+      'src/android-chrome-512x512.png',
+      'src/apple-touch-icon.png',
+      'src/favicon.ico',
+      'favicon-16x16.png',
+      'favicon-32x32.png',
+      'site.webmanifest'
+    ]
   },
   watch: {
     html: 'src/html/**/*.html',

@@ -6,6 +6,7 @@ import { minifyTask, noBsTask, noWatchTask } from './sbp-config/tasks/flags-task
 import { cleanTask, cleanDevTask } from './sbp-config/tasks/clean';
 import { htmlTask } from './sbp-config/tasks/html';
 import { fontsTask } from './sbp-config/tasks/fonts';
+import { faviconTask } from './sbp-config/tasks/favicon';
 import { imagesTask, iTask } from './sbp-config/tasks/images';
 import { jsTask } from './sbp-config/tasks/js';
 import { sassTask } from './sbp-config/tasks/sass';
@@ -18,7 +19,7 @@ import { deployTask } from './sbp-config/tasks/deploy';
 // ===========================================
 function watchTask(cb) {
   if (flags.watch) {
-    watch([path.watch.html], series(htmlTask));
+    watch([path.watch.html, path.watch.inlineSvg], series(htmlTask));
     watch([path.watch.dataJson], series(htmlTask));
     watch([path.watch.sprites], series(spritesTask));
     watch([path.watch.spritesSvg], series(spritesSVGTask));
@@ -43,7 +44,7 @@ const defaultTask = () => series(
 );
 
 const setBuild = () => series(noBsTask, noWatchTask, defaultTask());
-const copyTask = () => series(fontsTask, imagesTask, iTask);
+const copyTask = () => series(fontsTask, imagesTask, iTask, faviconTask);
 
 exports.default = series(noBsTask, defaultTask(), watchTask);
 exports.dev = series(defaultTask(), watchTask, bsTask);
