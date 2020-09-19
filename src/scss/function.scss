@@ -1,6 +1,0 @@
-@function mediaUp($width) {
-  @return 'min-width:' + $width;
-}
-@function mediaDown($width) {
-  @return 'max-width:' + $width;
-}
