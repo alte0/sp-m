@@ -12,8 +12,8 @@ export const slider = () => {
     simulateTouch: false,
     // Navigation arrows
     navigation: {
-      nextEl: '.slider-main__btn-prev',
-      prevEl: '.slider-main__btn-next'
+      nextEl: '.slider-main__btn-next',
+      prevEl: '.slider-main__btn-prev'
     }
   };
   const sliderContainer = document.querySelector('.slider-main');

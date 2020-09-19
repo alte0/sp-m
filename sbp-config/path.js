@@ -37,9 +37,9 @@ module.exports = {
       'src/android-chrome-512x512.png',
       'src/apple-touch-icon.png',
       'src/favicon.ico',
-      'favicon-16x16.png',
-      'favicon-32x32.png',
-      'site.webmanifest'
+      'src/favicon-16x16.png',
+      'src/favicon-32x32.png',
+      'src/site.webmanifest'
     ]
   },
   watch: {
