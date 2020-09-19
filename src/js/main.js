@@ -89,8 +89,6 @@ const domLoaded = function () {
 
     isDesktop = widthWindows >= WIDTH_WINDOW;
     initOverlayScrollbarMobile(isDesktop, scrollBarNav);
-    console.log('windowsWidth - ', widthWindows);
-    console.log('isDesktop - ', isDesktop);
   };
 };
 
