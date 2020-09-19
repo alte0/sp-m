@@ -34,18 +34,18 @@
     }
 
     @media screen and (mediaUp($desktopUp)) {
-      background-color: $gray70;
+      background-color: $gray90;
       background-image: url("../images/bg-slide-main.jpg");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: 100% auto;
       display: flex;
       align-items: center;
       height: auto;
       z-index: 0;
 
       &:after {
-        background: linear-gradient(0deg, rgba(23, 23, 23, 0.7), rgba(23, 23, 23, 0.7));
+        background-color: transparentize($gray90, 0.3);
         content: '';
         position: absolute;
         top: 0;
@@ -76,8 +76,8 @@
   }
 
   &__desc {
-    margin-top: 0;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
+    max-width: 590px;
   }
 
   &__title,
@@ -133,5 +133,29 @@
       background-image: url("data:image/svg+xml,%3Csvg width='86' height='160' viewBox='0 0 86 160' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.21796 40.2887L70 0.57735L138.782 40.2887V119.711L70 159.423L1.21796 119.711V40.2887Z' stroke='white'/%3E%3C/svg%3E%0A");
       right: -36px;
     }
+  }
+
+  &__progress-next {
+    position: absolute;
+    background-color: transparentize($white, 0.8);
+    height: 1px;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    overflow: hidden;
+    margin: auto;
+    width: 200px;
+    z-index: 2;
+  }
+
+  &__progress-bar {
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 200px;
+    transform: translateX(-100%);
+    z-index: 1;
   }
 }
