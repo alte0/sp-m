@@ -14,11 +14,11 @@
   text-transform: uppercase;
 
   &_menu {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       background-color: $gray3;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       display: none;
     }
   }
@@ -29,7 +29,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
 
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       width: 100%;
     }
   }
@@ -144,11 +144,11 @@
     right: 0;
     margin: auto;
 
-    @media screen and (min-width: 640px) and (max-width: 979px) {
+    @media screen and (mediaUp($tabletUp)) and (mediaDown($desktopDown)) {
       padding: 26px 126px;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       display: none;
     }
   }

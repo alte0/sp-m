@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
 
-  @media screen and (max-width: 979px) {
+  @media screen and (mediaDown($desktopDown)) {
     background-color: $white;
     border-top: 1px solid $gray10;
     position: fixed;
@@ -16,25 +16,25 @@
   &__item {
     flex-grow: 1;
 
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       border-right: 1px solid $gray10;
     }
   }
 
   &__item:nth-child(2) {
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       padding-left: 34px;
     }
   }
 
   &__item:last-child {
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       order: -1;
     }
   }
 
   &__item:first-child {
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       order: 1;
     }
   }

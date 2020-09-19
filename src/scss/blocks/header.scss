@@ -2,22 +2,24 @@
   padding-top: 24px;
   position: relative;
 
-  @media screen and (max-width: 979px) {
+  @media screen and (mediaDown($desktopDown)) {
     background-image: url("/images/bg-header.svg");
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: contain;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (mediaUp($tabletUp)) {
     padding-top: 48px;
   }
 
-  @media screen and (min-width: 980px) {
-    padding-top: 12px;
+  @media screen and (mediaUp($desktopUp)) {
+    padding-top: 8px;
 
     &_full-desktop-up {
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -26,7 +28,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -36,16 +38,31 @@
   &__link-logo {
     align-self: center;
     width: 92px;
+    position: relative;
+
+    @media screen and (mediaUp($desktopUp)) {
+      &:after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='16' viewBox='0 0 56 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 0L0 16H56L28 0Z' fill='white'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+        height: 16px;
+        width: 56px;
+        transform: rotate(180deg);
+        z-index: 10;
+      }
+    }
   }
 
   &__nav {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       display: none;
       background-color: $gray80;
       padding: 24px 20px;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       & > .list-menu {
         display: flex;
         flex-direction: row;
@@ -54,7 +71,7 @@
   }
 
   &__nav_open-js {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       display: block;
       position: fixed;
       top: 0;
@@ -73,7 +90,7 @@
   &__form-search {
     display: none;
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       font-size: 0;
     }
   }
@@ -81,7 +98,7 @@
   &__form-search_open-js {
     display: block;
 
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       background-color: transparentize($gray80, 0.4);
       padding: 24px 20px;
       position: fixed;
@@ -93,7 +110,7 @@
       overflow-y: auto;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       width: 525px;
     }
   }
@@ -108,11 +125,11 @@
     line-height: 28px;
     padding: 14px 24px;
 
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       width: 100%;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       background: $gray3;
       border: none;
       margin-right: 5px;
@@ -121,7 +138,7 @@
   }
 
   &__form-submit {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       position: absolute;
       right: 18px;
       top: 0;
@@ -129,7 +146,7 @@
       margin: auto;
     }
 
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       color: $white;
       padding: 16px 28px;
       position: relative;
@@ -183,7 +200,7 @@
   }
 
   &__form-text-submit {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -196,7 +213,7 @@
   }
 
   &__form-wrap {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       background-color: $gray80;
       position: absolute;
       bottom: 0;
@@ -216,6 +233,39 @@
     display: none;
   }
 
+  &__contacts {
+    @media screen and (mediaUp($desktopUp)) {
+      //height: 78px;
+      //padding-top: 28px;
+      //padding-bottom: 28px;
+      padding: 23px 0;
+    }
+
+    @media screen and (mediaDown($desktopDown)) {
+      display: none;
+    }
+  }
+
+  &__contacts-container {
+    @media screen and (mediaUp($desktopUp)) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__link-email {
+    @media screen and (mediaUp($desktopUp)) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__link-tel {
+    @media screen and (mediaUp($desktopUp)) {
+      margin-right: 32px;
+    }
+  }
 }
 
 

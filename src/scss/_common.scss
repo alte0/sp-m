@@ -26,21 +26,35 @@ img {
 }
 
 .container {
-  max-width: 1120px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
 
-  @media screen and (min-width: 980px) {
+  @media screen and (mediaUp($tabletUp)) {
     padding-left: 32px;
     padding-right: 32px;
+    max-width: $tabletUp;
   }
 
-  @media screen and (min-width: 1600px) {
-    max-width: 1520px;
-    padding-left: 40px;
-    padding-right: 40px;
+  @media screen and (mediaUp($desktopUp)) {
+    padding-left: 64px;
+    padding-right: 64px;
+    max-width: $desktopUp;
+  }
+
+  @media screen and (mediaUp($desktopUpX)) {
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: $desktopUpX;
+  }
+
+  @media screen and (mediaUp($desktopUpX2)) {
+    padding-left: 200px;
+    padding-right: 200px;
+    max-width: $desktopUpX2;
   }
 }
 

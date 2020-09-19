@@ -14,7 +14,9 @@ $minify: false !default;
 
 @import "../../node_modules/normalize.css/normalize";
 @import "../../node_modules/overlayscrollbars/css/overlayScrollbars";
+@import "../../node_modules/swiper/swiper-bundle";
 @import "variables";
+@import "function";
 @import "fonts";
 @import "common";
 @import "keyframes";

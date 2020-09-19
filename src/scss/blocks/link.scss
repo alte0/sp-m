@@ -1,0 +1,29 @@
+.link {
+  position: relative;
+
+  &_black {
+    color: $black;
+  }
+
+  &_where-us,
+  &_our-email,
+  &_tel {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &_where-us {
+    padding-left: 32px;
+  }
+
+  &_where-us .svg_map-pin-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

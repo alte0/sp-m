@@ -19,12 +19,12 @@
       width: 100%;
       z-index: 10;
 
-      @media screen and (min-width: 980px) and (max-height: 764px) {
+      @media screen and (mediaUp($desktopUp)) and (max-height: 764px) {
         top: 10px;
         bottom: 10px;
       }
 
-      @media screen and (min-width: 980px) and (min-height: 765px) {
+      @media screen and (mediaUp($desktopUp)) and (min-height: 765px) {
         top: 10px;
         bottom: auto;
         max-height: 754px;
@@ -165,20 +165,20 @@
   }
 
   &__btn-close-text {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       display: none;
     }
   }
 
   &__btn-submit {
-    @media screen and (max-width: 979px) {
+    @media screen and (mediaDown($desktopDown)) {
       box-sizing: border-box;
       width: 100%;
     }
   }
 
   &__row_space-between {
-    @media screen and (min-width: 980px) {
+    @media screen and (mediaUp($desktopUp)) {
       display: flex;
       justify-content: space-between;
     }

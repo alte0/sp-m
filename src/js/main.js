@@ -5,7 +5,7 @@ import {
   handleClickSearchMobile,
   handleClickSearchDesktop
 } from './components/modals';
-import {toggleClass} from './helpers';
+import { toggleClass } from './helpers';
 import { slider } from './components/slider';
 import 'overlayscrollbars/js/OverlayScrollbars';
 
@@ -16,7 +16,7 @@ const formWriteUs = document.querySelector('.write-us');
 const headerNav = document.querySelector('.header__nav');
 
 const domLoaded = function () {
-  const widthDesktop = 980;
+  const WIDTH_WINDOW = 1024;
   const configScrollBars = {
     scrollbars: {
       visibility: 'visible',
@@ -27,7 +27,8 @@ const domLoaded = function () {
     }
   };
   let widthWindows = window.innerWidth;
-  let isDesktop = widthWindows >= widthDesktop;
+  let isDesktop = widthWindows >= WIDTH_WINDOW;
+  // eslint-disable-next-line prefer-const
   let scrollBarNav = null;
 
   /**
@@ -36,7 +37,7 @@ const domLoaded = function () {
    * @param scrollBarNav
    */
   const initOverlayScrollbarMobile = (isDesktop, scrollBarNav) => {
-
+    // eslint-disable-next-line no-undef
     scrollBarNav = OverlayScrollbars(headerNav, configScrollBars);
 
     if (isDesktop) {
@@ -45,6 +46,7 @@ const domLoaded = function () {
   };
 
   svg4everybody();
+  // eslint-disable-next-line no-undef
   OverlayScrollbars(document.querySelectorAll('[data-overlayscrollbars]'), configScrollBars);
   slider();
   initOverlayScrollbarMobile(isDesktop, scrollBarNav);
@@ -85,7 +87,7 @@ const domLoaded = function () {
   window.onresize = function () {
     widthWindows = window.innerWidth;
 
-    isDesktop = widthWindows >= widthDesktop;
+    isDesktop = widthWindows >= WIDTH_WINDOW;
     initOverlayScrollbarMobile(isDesktop, scrollBarNav);
     console.log('windowsWidth - ', widthWindows);
     console.log('isDesktop - ', isDesktop);

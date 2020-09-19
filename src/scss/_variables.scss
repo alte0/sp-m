@@ -1,7 +1,15 @@
 $baseFont: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 $baseFontSize: 18px;
 $baseLineHeight: 1.555555555555556;
-
+//Media
+$tabletUp: 768px;
+$tabletDown: 767px;
+$desktopUp: 1024px;
+$desktopDown: 1023px;
+$desktopUpX: 1280px;
+$desktopDownX: 1279px;
+$desktopUpX2: 1920px;
+$desktopDownX2: 1919px;
 //Colors
 //main
 $white: #fff;
