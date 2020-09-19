@@ -2,13 +2,6 @@
   padding-top: 24px;
   position: relative;
 
-  @media screen and (mediaDown($desktopDown)) {
-    background-image: url("/images/bg-header.svg");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-size: contain;
-  }
-
   @media screen and (mediaUp($tabletUp)) {
     padding-top: 48px;
   }
@@ -23,16 +16,71 @@
     }
   }
 
+  @media screen and (mediaDown($desktopDown)) {
+    &:before {
+      content: '';
+      background-image: url("/images/bg-header.svg");
+      background-repeat: no-repeat;
+      background-position: center 0;
+      background-size: 116%;
+      position: absolute;
+      top: 0;
+      height: 180px;
+    }
+  }
+
+  @media screen and (mediaDown($tabletDown)) {
+    &:before {
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+  @media screen and (mediaUp($tabletUp)) and (mediaDown($desktopDown)) {
+    &:before {
+      left: 32px;
+      right: 32px;
+      height: 410px;
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    position: relative;
 
     @media screen and (mediaUp($desktopUp)) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
     }
+
+    //@media screen and (mediaDown($desktopDown)) {
+    //  &:before {
+    //    content: '';
+    //    background-image: url("/images/bg-header.svg");
+    //    background-repeat: no-repeat;
+    //    background-position: center 0;
+    //    background-size: contain;
+    //    position: absolute;
+    //    left: 0;
+    //    right: 0;
+    //    height: 170px;
+    //  }
+    //}
+
+    //@media screen and (mediaDown($tabletDown)) {
+    //  &:before {
+    //    top: -24px;
+    //  }
+    //}
+    //
+    //@media screen and (mediaUp($tabletUp)) and (mediaDown($desktopDown)) {
+    //  &:before {
+    //    top: -48px;
+    //  }
+    //}
   }
 
   &__link-logo {

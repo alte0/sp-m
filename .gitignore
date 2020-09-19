@@ -10,6 +10,8 @@ Thumbs.db
 # Вспомогательные файлы
 *.log*
 node_modules/
+node_modules L/
+node_modules W/
 bower_components/
 
 # Папка с собранными файлами проекта

@@ -106,6 +106,7 @@ export function inlineSpriteSVGTask () {
     //   }
     // }))
     .pipe(gulpif(flags.watch, dest(path.dev.inlineSvg)))
+    .pipe(gulpif(!flags.watch, dest(path.dev.inlineSvg)))
     .pipe(gulpif(!flags.watch, dest(path.build.inlineSvg)))
     .pipe(gulpif(flags.bs, browserSync.stream()));
 }
