@@ -32,9 +32,42 @@
       </block>
   </main>
   <block name="footer">
-    <footer>
-      <div class="container">
-        footer content
+    <footer block="footer">
+      <div class="container" elem="container">
+        <address elem="address">
+          142432, Россия, Московская обл., г. Черноголовка, пр. 1-й, д. 4, ком. 215
+        </address>
+        <a elem="btn-see-map" class="btn btn_see-map">Смотреть на карте</a>
+        <a href="tel:+74965224044" block="link" mix="block:footer elem:link-tel" mods="tel white">+7 (49652) 240-44</a>
+        <a href="email:sales@enspectr.com" block="link" mix="block:footer elem:link-email" mods="our-email white">sales@enspectr.com</a>
+        <hr elem="hr">
+        <div elem="wrap-about-site">
+          <p elem="copyright">ООО «Спектр-М» © 2019</p>
+          <a href="#" block="link" mix="block:footer elem:privacy-policy" mods="privacy-policy">Политика конфиденциальности</a>
+        </div>
+        <div elem="wrap-media">
+          <ul block="social-links">
+            <li elem="item">
+              <a href="https://www.youtube.com/" elem="link" target="_blank">
+                <span class="visually-hidden">Наш Youtube канал</span>
+                <svg class="svg svg_youtube" elem="svg" width="24" height="24">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li elem="item">
+              <a href="https://www.linkedin.com/" elem="link" target="_blank">
+                <span class="visually-hidden">Мы в LinkedIn</span>
+                <svg class="svg svg_linkedin" elem="svg" width="24" height="24">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <a href="#" elem="logo-wrap">
+            <img src="images/logo-cron.svg" width="64" height="64" alt="Лого Крон" class="logo-cron">
+          </a>
+        </div>
       </div>
     </footer>
   </block>

@@ -10,6 +10,18 @@ img {
   height: auto;
 }
 
+a {
+  color: $blue50v;
+
+  &:focus {
+    outline: 1px solid $accent20;
+  }
+
+  &:hover {
+    color: $accent50;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

@@ -178,4 +178,16 @@
     }
   }
 
+  &_see-map {
+    color: $white;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: $accent30;
+    }
+  }
+
 }

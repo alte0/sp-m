@@ -4,9 +4,9 @@
   flex-direction: row;
 
   &__item {
-    line-height: 20px;
+    line-height: 0;
     margin-right: 8px;
-    width: 24px;
+    //width: 24px;
 
     &:last-child {
       margin-right: 0;
@@ -15,13 +15,11 @@
 
   &__link {
     position: relative;
+    line-height: 0;
     display: inline-block;
-    height: 20px;
 
     & .svg {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      display: inline-block;
     }
   }
 }
