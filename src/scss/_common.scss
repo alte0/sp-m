@@ -13,11 +13,11 @@ img {
 a {
   color: $blue50v;
 
-  &:not(.btn):focus {
+  &:not(.btn):not(.list-menu__link):focus {
     outline: 1px solid $accent20;
   }
 
-  &:not(.btn):hover {
+  &:not(.btn):not(.list-menu__link):hover {
     color: $accent50;
   }
 }
