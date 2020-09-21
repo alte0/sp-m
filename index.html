@@ -244,12 +244,12 @@
         <!-- end form search -->
         <ul class="additional-menu">
           <li class="additional-menu__item">
-            <button type="button" class="btn btn_email">
+            <a href="#" type="button" class="btn btn_email">
               <span class="visually-hidden">Написать нам</span>
               <svg class="svg svg_envelope" width="24" height="24">
                 <use xlink:href="#envelope"></use>
               </svg>
-            </button>
+            </a>
           </li>
           <li class="additional-menu__item">
             <button type="button" class="btn btn_menu">
@@ -260,7 +260,7 @@
             </button>
           </li>
           <li class="additional-menu__item">
-            <button type="button" class="btn btn_search">
+            <a href="#" class="btn btn_search">
               <span class="visually-hidden">Найти на сайте</span>
               <svg class="svg svg_search" width="24" height="24">
                 <use xlink:href="#search"></use>
@@ -268,7 +268,7 @@
               <svg class="svg svg_x svg_hidden" width="24" height="24">
                 <use xlink:href="#x"></use>
               </svg>
-            </button>
+            </a>
           </li>
         </ul>
         <!-- end additional-menu -->
@@ -399,10 +399,47 @@
         <h1 class="visually-hidden">Главная страница Спектр-М</h1>
         main
       </div>
-      <!-- <include src="ul.html" locals='{"array":["li elment", "li elment", "li elment" ]}'></include> -->
+      <section class="map">
+        <h3 class="visually-hidden">Адрес на карте</h3>
+        <div class="map__static"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242018.03895030095!2d37.50905049165133!3d55.69746645442435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1600672593902!5m2!1sru!2sru" frameborder="0" style="border:0;" allowfullscreen aria-hidden="false" tabindex="0" class="map__js"></iframe>
+      </section>
     </main>
-    <footer>
-      <div class="container">footer content</div>
+    <footer class="footer">
+      <div class="footer__container container">
+        <address class="footer__address">142432, Россия, Московская обл., г. Черноголовка, пр. 1-й, д. 4, ком. 215</address>
+        <a class="footer__btn-see-map btn btn_see-map">Смотреть на карте</a>
+        <a href="tel:+74965224044" class="link link_tel link_white footer__link-tel">+7 (49652) 240-44</a>
+        <a href="email:sales@enspectr.com" class="link link_our-email link_white footer__link-email">sales@enspectr.com</a>
+        <hr class="footer__hr">
+        <div class="footer__wrap-about-site">
+          <p class="footer__copyright">ООО «Спектр-М» © 2019</p>
+          <a href="#" class="link link_privacy-policy footer__privacy-policy">Политика конфиденциальности</a>
+        </div>
+        <div class="footer__wrap-media">
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="https://www.youtube.com/" target="_blank" class="social-links__link">
+                <span class="visually-hidden">Наш Youtube канал</span>
+                <svg class="social-links__svg svg svg_youtube" width="24" height="24">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="https://www.linkedin.com/" target="_blank" class="social-links__link">
+                <span class="visually-hidden">Мы в LinkedIn</span>
+                <svg class="social-links__svg svg svg_linkedin" width="24" height="24">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="footer__logo-wrap">
+            <img src="images/logo-cron.svg" width="64" height="64" alt="Лого Крон" class="logo-cron">
+          </a>
+        </div>
+      </div>
     </footer>
     <script src="js/vendor.bundle.js" defer></script>
     <script src="js/script.js" defer></script>
