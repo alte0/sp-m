@@ -1,5 +1,3 @@
-import {handleClickOpenMap} from "./components/map";
-
 /**
  * Переключает класс у elem
  * @param {Element} elem

@@ -2,7 +2,6 @@ import Swiper from 'swiper/bundle';
 
 export const slider = () => {
   const configSwiper = {
-    // init: false,
     autoplay: {
       delay: 3000
     },

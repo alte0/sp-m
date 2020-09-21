@@ -1,7 +1,7 @@
 /**
  * Клик по кнопке почты.
  */
-export const handleClickEmail = (evt) => {
+export const handleClickEmail = () => {
   const writeUs = document.querySelector('.write-us-wrap');
   const input = writeUs.querySelector('input');
 
