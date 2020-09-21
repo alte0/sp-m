@@ -5,15 +5,20 @@ import {
   handleClickSearchMobile,
   handleClickSearchDesktop
 } from './components/modals';
-import { toggleClass } from './helpers';
+import {
+  toggleClass,
+  initOnceEvent
+} from './helpers';
 import { slider } from './components/slider';
 import 'overlayscrollbars/js/OverlayScrollbars';
+import { handleClickOpenMap } from './components/map';
 
 const email = document.querySelector('.btn_email');
 const hamburger = document.querySelector('.btn_menu');
 const search = document.querySelector('.btn_search');
 const formWriteUs = document.querySelector('.write-us');
 const headerNav = document.querySelector('.header__nav');
+const btnOpenMap = document.querySelector('.btn_see-map');
 
 const domLoaded = function () {
   const WIDTH_WINDOW = 1024;
@@ -70,19 +75,16 @@ const domLoaded = function () {
     });
   }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', handleClickMenu);
-  }
+  initOnceEvent(hamburger, 'click', handleClickMenu);
+  initOnceEvent(search, 'click', function () {
+    if (isDesktop) {
+      handleClickSearchDesktop();
+    } else {
+      handleClickSearchMobile();
+    }
+  });
 
-  if (search) {
-    search.addEventListener('click', function () {
-      if (isDesktop) {
-        handleClickSearchDesktop();
-      } else {
-        handleClickSearchMobile();
-      }
-    });
-  }
+  initOnceEvent(btnOpenMap, 'click', handleClickOpenMap);
 
   window.onresize = function () {
     widthWindows = window.innerWidth;
@@ -92,4 +94,4 @@ const domLoaded = function () {
   };
 };
 
-document.addEventListener('DOMContentLoaded', domLoaded);
+initOnceEvent(document, 'DOMContentLoaded', domLoaded);

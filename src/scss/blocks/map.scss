@@ -1,0 +1,16 @@
+.map {
+  height: 400px;
+
+  @media screen and (mediaDown($tabletDown)) {
+    display: none;
+  }
+
+  &_open-mobile-js {
+    display: block;
+  }
+
+  &__js {
+    width: 100%;
+    height: 100%;
+  }
+}
