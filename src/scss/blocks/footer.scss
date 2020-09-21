@@ -55,9 +55,10 @@
   &__link-tel,
   &__link-email {
     @media screen and (mediaDown($tabletDown)) {
-      display: inline-block;
+      display: block;
       margin-left: auto;
       margin-right: auto;
+      max-width: max-content;
     }
   }
 
