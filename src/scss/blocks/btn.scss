@@ -23,16 +23,16 @@
     }
   }
 
-  &_email,
-  &_menu,
-  &_search {
-    padding-top: 16px;
-    padding-bottom: 16px;
-
-    @media screen and (mediaDown($desktopDown)) {
-      width: 100%;
-    }
-  }
+  //&_email,
+  //&_menu,
+  //&_search {
+  //  padding-top: 16px;
+  //  padding-bottom: 16px;
+  //
+  //  @media screen and (mediaDown($desktopDown)) {
+  //    width: 100%;
+  //  }
+  //}
 
   &_accent,
   &_secondary,
